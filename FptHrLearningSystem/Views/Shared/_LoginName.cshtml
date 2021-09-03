@@ -1,0 +1,7 @@
+﻿@using Microsoft.AspNet.Identity
+@if (Request.IsAuthenticated)
+{
+        @Html.ActionLink("" + User.Identity.GetUserName() + "", "Index", "Users", routeValues: null, htmlAttributes: new { title = "Manage", @class = "waves-effect waves-light" })
+}
+
+

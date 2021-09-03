@@ -1,0 +1,7 @@
+﻿@using Microsoft.AspNet.Identity
+@if (Request.IsAuthenticated)
+{
+    <div style="">
+        @User.Identity.GetUserName()
+    </div>
+}

@@ -1,0 +1,48 @@
+ .form-material .form-primary .form-control:focus ~ .form-bar:after, .form-material .form-primary .form-control:focus ~ .form-bar:before {
+        background: #f37125;
+    }
+    .form-material .form-primary .form-control:focus ~ label {
+        color: #f37125;
+    }
+    body[themebg-pattern="theme1"] {
+        background-color: /*#f05123*/ #f37125;
+    }
+    .btn-md {
+        padding: 10px 16px;
+        font-size: 15px;
+        line-height: 23px;
+        background-color: #f05123;
+    }
+    /*check*/
+    .checkbox-fade.fade-in-primary .cr, .checkbox-fade.zoom-primary .cr, .checkbox-zoom.fade-in-primary .cr, .checkbox-zoom.zoom-primary .cr {
+        border: 2px solid #f05123;
+    }
+    .icofont-ui-check:before {
+        content: "\ed27";
+        color: #f05123;
+    }
+    .btn-primary, .sweet-alert button.confirm, .wizard > .actions a {
+        background-color: #f05123;
+        border-color: #333;
+        color: #fff;
+        cursor: pointer;
+        -webkit-transition: all ease-in 0.3s;
+        transition: all ease-in 0.3s;
+    }
+        .btn-primary:hover, .sweet-alert button.confirm:hover, .wizard > .actions a:hover {
+            background-color: #f37125;
+            border-color: #f37125;
+        }
+    a:focus, a:hover {
+        text-decoration: none;
+        color: #f37125;
+    }
+    .btn-primary:focus, .sweet-alert button.confirm:focus, .wizard > .actions a:focus {
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        color: #fff;
+        background-color: #f37125;
+    }
+    .m-t-30 {
+        margin-top: 20px;
+    }

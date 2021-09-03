@@ -1,0 +1,236 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+<link href=" @Url.Content("~/Content/Assets/css/Infomation.css")" rel="stylesheet" />
+ <script type="text/javascript" src="@Url.Content("~/Content/Assets/js/script.js")"></script>
+<style>
+    .profile-head h6 {
+        color: #f05123;
+    }
+
+    .profile-tab p {
+        font-weight: 600;
+        color: #f05123;
+    }
+</style>
+@if (ViewBag.displayMenu == "Yes")
+{
+    if (Request.IsAuthenticated && Model != null)
+    {
+        @*<h1>Welcome Admin. Now you can create user Role.</h1>*@
+        <text>
+            <div class="page-header">
+                <div class="page-block">
+                    <div class="row align-items-center">
+                        <div class="col-md-8">
+                            <div class="page-header-title">
+                                <h5 class="m-b-10">Your Profile</h5>
+                                <p class="m-b-0">Welcome to Fpt Hr System</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <ul class="breadcrumb-title">
+                                <li class="breadcrumb-item">
+                                    <a href="/Home/Index"> <i class="fa fa-home"></i> </a>
+                                </li>
+                                <li class="breadcrumb-item">
+                                    <a href="~/Users/Index">@ViewBag.LastName Profile's</a>
+                                </li>
+                               
+                            </ul>
+                            <ul class="breadcrumb-title">
+                                <li class="breadcrumb-item">
+                                    <p class="text-success">@ViewBag.StatusMessage</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container emp-profile" style="margin-top:17px">
+                <form method="post">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="profile-img">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog" alt="" />
+                                <div class="file btn btn-lg btn-primary">
+                                    Change Photo
+                                    <input type="file" name="file" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="profile-head">
+                                <h5>
+                                    Hello! @ViewBag.LastName
+                                </h5>
+                                <h6>
+                                    This is your profile page
+                                </h6>
+                                <p class="proile-rating">Access Authority: <span>@ViewBag.UserType</span></p>
+                                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">About</a>
+                                    </li>
+                                    @*<li class="nav-item">
+                            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Timeline</a>
+                        </li>*@
+                                </ul>
+                            </div>
+                        </div>
+                        @*<div class="col-md-2">
+
+                <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile" />
+            </div>*@
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="profile-work">
+                                <p>University of Greenwich</p>
+                                <a href="https://greenwich.edu.vn/dai-hoc-greenwich-uk/">Website Link</a><br />
+                                <a href="https://greenwich.edu.vn/lien-he/">Contact With Us</a><br />
+                                <p>Address</p>
+                                <a href="">Số 20, Đường Cộng Hoà, Phường 12, Quận Tân Bình, TP HCM</a><br />
+                                <div class="profile-img">
+                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.137828771!2d106.6510651503708!3d10.800754092267267!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317529477b5c7c99%3A0x567b889fd80bf3d8!2zMjAgQ-G7mW5nIEjDsmEsIFBoxrDhu51uZyA0LCBUw6JuIELDrG5oLCBUaMOgbmggcGjhu5EgSOG7kyBDaMOtIE1pbmgsIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1629870271425!5m2!1svi!2s" width="240" height="150" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="tab-content profile-tab" id="myTabContent">
+                                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label>User Id</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p>@ViewBag.Id</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label>Name</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p>@ViewBag.FirstName @ViewBag.LastName</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label>Email</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p>@ViewBag.Email</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label>Gender</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p>@ViewBag.Gender</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label>Birthday</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p>@ViewBag.Birthday</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label>Phone</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p>@ViewBag.PhoneNumber</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label>Address</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p>@ViewBag.Address</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                @*<div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Experience</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p>Expert</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Hourly Rate</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p>10$/hr</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Total Projects</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p>230</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>English Level</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p>Expert</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Availability</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p>6 months</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label>Your Bio</label><br />
+                                <p>Your detail description</p>
+                            </div>
+                        </div>
+                    </div>*@
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label></label>
+                        </div>
+                        <div class="col-md-6">
+                            <p>  <a href="~/User/EditYourSelf/@ViewBag.Id" class="dropdown-item" style="width: 105px;">Edit Profile</a></p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </text>
+    }
+    else
+    {
+        <ul>
+            <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+            <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+        </ul>
+    }
+}
+else
+{
+}
+

@@ -25,6 +25,7 @@ An Admin’s role
 - Can login to the system through the first page of the application
 - Can create/edit/delete new Trainer account and change (if existing user) its password
 - Can create/edit/delete new Training Staff account and change (if existing user) its password
+
 A Training Staff’s role
 - Can create trainee accounts by entering details.
 - Can search a Trainee-by-trainee account, programming language, TOEIC score.
@@ -38,11 +39,13 @@ A Training Staff’s role
 - Can assign trainee to a course.
 - Can Remove courses from Trainee
 - Can change Trainee assigned to another course
+
 A Trainer’s role
 - In the same system, the trainer who have been registered by the administrator can login and can
 update his profile.
 - Can update his / her account password
 - Can view courses which he is assigned to.
+
 A Trainee’s role
 - In the same system, the trainee who have been registered by the administrator can login and can view
 his/her profile such
